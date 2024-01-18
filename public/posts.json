@@ -1,0 +1,53 @@
+[
+    {
+        "img": "https://i.ibb.co/dDBsHLG/1.png",
+        "title": "What if famous brands had regular fonts? Meet RegulaBrands!",
+        "description": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
+        "category": "Article",
+        "category_id ": "01",
+        "user": "Sarthak Kamra",
+        "user_img": "https://i.ibb.co/QPt1XdS/sarthok.png",
+        "view":"1.4k"
+    },
+    {
+        "img": "https://i.ibb.co/T1JmVBC/2.png",
+        "title": "Tax Benefits for Investment under National Pension Scheme launched by Government",
+        "description": "I’ve worked in UX for the better part of a decade. From now on, I plan to rei…",
+        "category": "Education",
+        "category_id ": "02",
+        "user": "Sarah West",
+        "user_img": "https://i.ibb.co/vcFj6pP/sarah.png",
+        "view":"1.4k"
+    },
+    {
+        "img": "https://i.ibb.co/18m6vrT/3.png",
+        "title": "Finance & Investment Elite Social Mixer @Lujiazui",
+        "description": "",
+        "category": "Meetup",
+        "category_id ": "03",
+        "user": "Ronal Jones",
+        "user_img": "https://i.ibb.co/1nhVkSY/ronal.png",
+        "view":"1.4k",
+        "meeting_location": "Ahmedabad, India",
+        "meeting_date": "Fri, 12 Oct, 2018",
+        "website": "https://iamraselmolla.netlify.app"
+    },
+    {
+        "img": "",
+        "title": "Software Developer",
+        "description": "",
+        "category": "Job",
+        "category_id ": "04",
+        "user": "Joseph Gray",
+        "user_img": "https://i.ibb.co/Sc356kG/joshep.png",
+        "view":"1.4k",
+        "compnay_name" : "Innovaccer Analytics Private Ltd.",
+        "company_location" : "Noida, India",
+        "timesjob" : "#"
+    }
+]
+
+
+
+
+

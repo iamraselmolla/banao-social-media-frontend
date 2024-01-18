@@ -1,0 +1,125 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+section {
+  padding: 50px 0;
+}
+
+@media only screen and (max-width: 767px) {
+  section {
+    padding: 25px 0;
+  }
+
+  .banner {
+    height: 236px !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .banner-header {
+    margin-top: 37%;
+  }
+}
+
+
+.border-bottom-none {
+  border-bottom: none !important;
+}
+
+.border-top-none {
+  border-top: none !important;
+}
+
+.border-left-none {
+  border-left: none !important;
+}
+
+.register-user-form .form-control:focus {
+  box-shadow: 0 0 0 2px rgb(13 110 253 / 25%) !important;
+
+}
+
+.register-user-form .form-control {
+  background-color: #F7F8FA;
+
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.modalRegis {
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow-y: scroll;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 15px;
+  font-weight: bold;
+  position: absolute;
+  right: 0;
+  line-height: 30px;
+  top: -35px;
+  background: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Post btn */
+.post-btn {
+  background: #FF5C5C;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  font-size: 30px;
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+.search-input{
+  width: 300px!important;
+}
+.search-input:focus{
+  box-shadow: none!important;
+  outline: none;
+  border: none;
+}
