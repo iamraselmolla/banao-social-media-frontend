@@ -14,7 +14,8 @@ const Otp = () => {
             return
         }
         setVerifying(true)
-        fetch('', {
+        fetch('http://localhost:5000/match-opt', {
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
@@ -22,11 +23,22 @@ const Otp = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                setPage('newpass')
+                if (data.statusCode === 400) {
+                    return toast.error(data?.message)
+                } else {
+                    setPage('newpass')
+                    setVerifying(false)
+                    setOtp('')
+                }
             })
             .catch(err => {
                 toast.error("OPT didn't match")
+                setVerifying(false)
+                setOtp('')
+            })
+            .finally(() => {
+                setVerifying(false)
+                setOtp('')
             })
 
     }
@@ -49,7 +61,7 @@ const Otp = () => {
             {
                 verify ? <div className='d-flex justify-content-center mt-4'>
                     <div className="spinner-grow" style={{ width: '3rem', height: '3rem' }} role="status">
-                        <span class="visually-hidden">Loading...</span>
+                        <span className="visually-hidden">Loading...</span>
                     </div>
                 </div>
                     :

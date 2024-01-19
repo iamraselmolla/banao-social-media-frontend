@@ -59,8 +59,8 @@ const ForgetEmail = () => {
             <input onChange={(e) => setMailInput(e.target.value)} placeholder='email' name="email" type="email" className="form-control rounded-0 fw-bold py-2 rounded-5 text-muted" id="firstnameinput11" />
             <label>Please input your account email to reset password</label>
             {!loading && <button type="submit" className="btn mt-3 py-2 w-100 rounded-5 fw-bold btn-success">Reset Password</button>}
-            {loading && <button class="btn mt-3 py-2 w-100 rounded-5 fw-bold btn-success" type="button" disabled>
-                <span class="spinner-border me-2 spinner-border-sm" role="status" aria-hidden="true"></span>
+            {loading && <button className="btn mt-3 py-2 w-100 rounded-5 fw-bold btn-success" type="button" disabled>
+                <span className="spinner-border me-2 spinner-border-sm" role="status" aria-hidden="true"></span>
                 Please Wait...
             </button>}
         </form>

@@ -101,8 +101,8 @@ const Login = () => {
                                     <div className="row">
                                         {!loading && <button onClick={handleLogin} type="submit" className="btn mt-3 py-2 w-100 rounded-5 fw-bold btn-success">Log in</button>}
 
-                                        {loading && <button class="btn mt-3 py-2 w-100 rounded-5 fw-bold btn-success" type="button" disabled>
-                                            <span class="spinner-border me-2 spinner-border-sm" role="status" aria-hidden="true"></span>
+                                        {loading && <button className="btn mt-3 py-2 w-100 rounded-5 fw-bold btn-success" type="button" disabled>
+                                            <span className="spinner-border me-2 spinner-border-sm" role="status" aria-hidden="true"></span>
                                             Please Wait...
                                         </button>}
                                     </div>

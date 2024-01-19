@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 const NewPassword = () => {
     const { email } = useContext(OtpContext)
+    const [loading, setLoading] = useState(false)
     const [newPass, setNewPass] = useState({
         pass1: '',
         pass2: ''
@@ -34,11 +35,12 @@ const NewPassword = () => {
             return;
         }
         if (newPass.pass1.length <= 5) {
-            {
-                return toast.error("Please use minimum 6 digits passwords")
-            }
+
+            return toast.error("Please use minimum 6 digits passwords")
+
         }
-        const result = await fetch('https://banao-social-media-server-mu.vercel.app/reset-password',
+        setLoading(true)
+        fetch('http://localhost:5000/reset-password',
             {
                 method: 'PUT',
                 headers: {
@@ -51,10 +53,14 @@ const NewPassword = () => {
                 if (data?.statusCode === 200) {
                     toast.success("Password changed successfully");
                     navigate('/login')
+                    setLoading(false)
                 }
 
             })
-            .catch(err => console.log(err.message))
+            .catch(err => {
+                setLoading(false)
+                console.log(err.message)
+            })
 
 
 
@@ -87,7 +93,15 @@ const NewPassword = () => {
                             onChange={handleChange}
                         />
                     </div>
-                    <button type="submit" className='btn btn-primary'>Save Password</button>
+                    {loading ? <>
+                        <button className="btn btn-primary" type="button" disabled>
+                            <span className="spinner-grow spinner-grow-sm" aria-hidden="true"></span>
+                            <span role="status">Loading...</span>
+                        </button>
+                    </>
+                        :
+                        <button type="submit" className='btn btn-primary'>Save Password</button>
+                    }
                 </form>
             </div>
         </div>
