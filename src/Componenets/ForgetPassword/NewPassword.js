@@ -40,7 +40,7 @@ const NewPassword = () => {
 
         }
         setLoading(true)
-        fetch('http://localhost:5000/reset-password',
+        fetch('https://banao-social-media-server-mu.vercel.app/reset-password',
             {
                 method: 'PUT',
                 headers: {

@@ -103,6 +103,10 @@ const Post = ({ post, handleShow, setEditPost, setReload, reload }) => {
         <div className='single-post border px-3 py-4 border-1 my-2 rounded'>
             <div cl className="fw-bolder position-relative">
                 <span className="position-absolute" style={{ right: '-10px', top: '-20px' }}>
+                    {
+                        console.log(parsedUser,
+                            post)
+                    }
 
                     {user && parsedUser?.email === post?.userInfo?.usermail &&
                         <div className="d-flex">

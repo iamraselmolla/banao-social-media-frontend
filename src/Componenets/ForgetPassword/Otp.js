@@ -10,11 +10,11 @@ const Otp = () => {
     const [verify, setVerifying] = useState(false)
     const handleOtpMatching = () => {
         if (!otp) {
-            toast.error("Please input the opt")
+            toast.error("Please input the otp")
             return
         }
         setVerifying(true)
-        fetch('http://localhost:5000/match-opt', {
+        fetch('https://banao-social-media-server-mu.vercel.app/match-otp', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
