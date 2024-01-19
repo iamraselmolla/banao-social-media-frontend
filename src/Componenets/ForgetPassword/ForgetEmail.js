@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const ForgetEmail = () => {
     const [mailInput, setMailInput] = useState()
-    const { setEmail, setPage, setGeneratedOtp } = useContext(OtpContext)
+    const { setEmail, setPage } = useContext(OtpContext)
     const [loading, setLoading] = useState(false)
 
 
@@ -18,15 +18,13 @@ const ForgetEmail = () => {
             return toast.error("Please provide an email for OTP to change the password");
         }
 
-        const otpNumber = Math.floor(Math.random() * 9000 + 1000);
-        setGeneratedOtp(otpNumber)
         setLoading(true)
-        fetch('http://localhost:5000/forget-password', {
+        fetch('https://banao-social-media-server-mu.vercel.app/forget-password', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ mailInput, otpNumber }),
+            body: JSON.stringify({ mailInput }),
         })
             .then((res) => {
                 if (res.status === 400) {
@@ -43,9 +41,9 @@ const ForgetEmail = () => {
             })
             .then(data => {
                 if (data?.statusCode === 400) {
-
                     return;
                 }
+                toast.success('OPT has been sent to your email')
 
                 setEmail(mailInput);
                 setPage('otp');

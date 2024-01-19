@@ -6,19 +6,29 @@ import toast from 'react-hot-toast';
 
 const Otp = () => {
     const [otp, setOtp] = useState('');
-    const { email, generatedotp, setPage } = useContext(OtpContext)
+    const { email, setPage } = useContext(OtpContext)
+    const [verify, setVerifying] = useState(false)
     const handleOtpMatching = () => {
-        if (!generatedotp || !otp) {
-            toast.error("Something wrong")
+        if (!otp) {
+            toast.error("Please input the opt")
             return
         }
-        if (parseInt(otp) !== generatedotp) {
-            toast.error('OTP didn\'t match')
-        }
-        if (parseInt(otp) === generatedotp) {
-            setPage('newpass')
-            return
-        }
+        setVerifying(true)
+        fetch('', {
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ email, otp })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setPage('newpass')
+            })
+            .catch(err => {
+                toast.error("OPT didn't match")
+            })
+
     }
     return (
         <div className="otp_container">
@@ -36,15 +46,23 @@ const Otp = () => {
                     renderInput={(props) => <input className='mx-3' {...props} />}
                 />
             </div>
-            <div className="d-flex justify-content-evenly  mt-5">
-                <button onClick={() => setOtp('')} className='btn btn-light border-1  border-dark  '>
-                    Clear
-                </button>
-                <button onClick={handleOtpMatching} className='btn btn-primary  text-white'>
-                    Verify
-                </button>
-            </div>
-        </div>
+            {
+                verify ? <div className='d-flex justify-content-center mt-4'>
+                    <div className="spinner-grow" style={{ width: '3rem', height: '3rem' }} role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+                    :
+                    <div className="d-flex justify-content-evenly  mt-5">
+                        <button onClick={() => setOtp('')} className='btn btn-light border-1  border-dark  '>
+                            Clear
+                        </button>
+                        <button onClick={handleOtpMatching} className='btn btn-primary  text-white'>
+                            Verify
+                        </button>
+                    </div>
+            }
+        </div >
     );
 };
 

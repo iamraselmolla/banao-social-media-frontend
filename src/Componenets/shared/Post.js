@@ -22,7 +22,7 @@ const Post = ({ post, handleShow, setEditPost, setReload, reload }) => {
     const dispatch = useDispatch()
     const handleDelete = (id) => {
         if (window.confirm('Do you want to delete this?')) {
-            fetch(`http://localhost:5000/delete-post/${_id}`, {
+            fetch(`https://banao-social-media-server-mu.vercel.app/delete-post/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -51,7 +51,7 @@ const Post = ({ post, handleShow, setEditPost, setReload, reload }) => {
         const comment = e.target.comment.value;
         const commentTime = new Date().getTime()
         const commentData = { commentorInfo, comment, commentTime }
-        fetch('http://localhost:5000/comment', {
+        fetch('https://banao-social-media-server-mu.vercel.app/comment', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -78,7 +78,7 @@ const Post = ({ post, handleShow, setEditPost, setReload, reload }) => {
         const username = parsedUser?.username
 
 
-        fetch(`http://localhost:5000/like`, {
+        fetch(`https://banao-social-media-server-mu.vercel.app/like`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

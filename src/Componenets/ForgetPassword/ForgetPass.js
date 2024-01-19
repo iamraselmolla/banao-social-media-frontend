@@ -9,7 +9,6 @@ export const OtpContext = createContext()
 const ForgetPass = () => {
     const [page, setPage] = useState('forget')
     const [email, setEmail] = useState()
-    const [generatedotp, setGeneratedOtp] = useState()
 
     function HandleOtpComponenet() {
         if (page === 'forget') return <ForgetEmail />
@@ -17,7 +16,7 @@ const ForgetPass = () => {
         if (page === 'newpass') return <NewPassword />
     }
 
-    const value = { page, setPage, email, setEmail, generatedotp, setGeneratedOtp }
+    const value = { page, setPage, email, setEmail }
 
 
 

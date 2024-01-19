@@ -29,7 +29,7 @@ const PostSection = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/posts', {
+                const response = await fetch('https://banao-social-media-server-mu.vercel.app/posts', {
                     method: 'GET',
                     mode: 'cors',
                     headers: {
@@ -74,7 +74,7 @@ const PostSection = () => {
         const likes = [];
         const comments = []
         const allDataInfo = { postData, postedTime, userInfo, likes, comments };
-        fetch('http://localhost:5000/posts', {
+        fetch('https://banao-social-media-server-mu.vercel.app/posts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -96,7 +96,7 @@ const PostSection = () => {
         e.preventDefault()
         handleClose();
         const editedPost = e.target.editpostText.value;
-        fetch(`http://localhost:5000/edit-post/${editPost?._id}`, {
+        fetch(`https://banao-social-media-server-mu.vercel.app/edit-post/${editPost?._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

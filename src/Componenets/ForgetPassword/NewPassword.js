@@ -38,7 +38,7 @@ const NewPassword = () => {
                 return toast.error("Please use minimum 6 digits passwords")
             }
         }
-        const result = await fetch('http://localhost:5000/reset-password',
+        const result = await fetch('https://banao-social-media-server-mu.vercel.app/reset-password',
             {
                 method: 'PUT',
                 headers: {
